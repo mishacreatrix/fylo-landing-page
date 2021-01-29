@@ -1,0 +1,26 @@
+.header {
+
+    nav {
+        padding: 1.5rem;
+    }
+
+    &__logo {
+
+        img {
+            width: 83px;
+            height: 26px;
+        }
+    }
+
+    &__menu {
+        a {
+            text-decoration: none;
+            color: $veryDarkBlue;
+            font-size: 0.875rem;
+        }
+
+        a:not(:last-child) {
+            padding-right: 1.5rem;
+        }
+    }
+}
