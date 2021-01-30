@@ -1,13 +1,17 @@
 .hero {
-
     flex-wrap: wrap;
 
     @include breakpoint-up(large) {
         flex-wrap: nowrap;
+        align-items: center;
         flex-direction: row-reverse;
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 100vh;
     }
 
     &__image {
+        padding: 0 0.5rem;
         img {
             max-width: 100%;
         }
@@ -15,9 +19,12 @@
 
     &__cta {
         text-align: center;
+        margin-top: 3.125rem;
 
         @include breakpoint-up(large) {
             text-align:left;
+            margin-top: 0;
+            padding-right: 5rem;
         }
 
         > p {
@@ -39,18 +46,26 @@
     input {
         height:2.5625rem;
         width: 100%;
+        margin-top: 1.375rem;
     }
     input[type="email"] {
         padding: 0.9375rem 1.625rem;
-        margin-bottom: 1rem;
-        margin-top: 1.375rem;
         border-radius: 3px;
         border: 1px solid $veryDarkBlue;
+
+        @include breakpoint-up(large) {
+            width: 17rem;
+            margin-right: 1rem;
+        }
     }
+    input[type="submit"] {
+        @include breakpoint-up(large) {
+            width: 9.5rem;
+        }
+    }
+
     ::-webkit-input-placeholder {
         color: $lightGray;
     }
 
-   
- 
 }

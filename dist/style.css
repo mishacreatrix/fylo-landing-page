@@ -21,8 +21,9 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 1.6875rem;
+  font-size: 2rem;
   font-weight: 700;
+  color: #070439;
 }
 
 .container--pall {
@@ -89,14 +90,32 @@ h1 {
   border: none;
   border-radius: 3px;
   padding: 0.875rem;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
 .button--primary {
   background-color: #3065f8;
   color: #fff;
+  -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  /* Firefox 3.5 - 3.6 */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.button--primary:hover {
+  background-color: #628af9;
 }
 
 /* To call these mixins: @include breakpoint-down(medium){ styles here } */
+@media (min-width: 64em) {
+  .header {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
 .header nav {
   padding: 1.5rem;
 }
@@ -125,11 +144,21 @@ h1 {
   .hero {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
   }
+}
+
+.hero__image {
+  padding: 0 0.5rem;
 }
 
 .hero__image img {
@@ -138,11 +167,14 @@ h1 {
 
 .hero__cta {
   text-align: center;
+  margin-top: 3.125rem;
 }
 
 @media (min-width: 64em) {
   .hero__cta {
     text-align: left;
+    margin-top: 0;
+    padding-right: 5rem;
   }
 }
 
@@ -169,17 +201,83 @@ h1 {
 .signupForm input {
   height: 2.5625rem;
   width: 100%;
+  margin-top: 1.375rem;
 }
 
 .signupForm input[type="email"] {
   padding: 0.9375rem 1.625rem;
-  margin-bottom: 1rem;
-  margin-top: 1.375rem;
   border-radius: 3px;
   border: 1px solid #070439;
 }
 
+@media (min-width: 64em) {
+  .signupForm input[type="email"] {
+    width: 17rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .signupForm input[type="submit"] {
+    width: 9.5rem;
+  }
+}
+
 .signupForm ::-webkit-input-placeholder {
   color: #bfbfbf;
+}
+
+.about {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media (min-width: 64em) {
+  .about {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+.about-wrapper {
+  background-color: #f6f6fe;
+}
+
+.about h2 {
+  text-align: center;
+}
+
+.about__image img {
+  width: 100%;
+}
+
+.about__link {
+  border-bottom: 1px solid #3c9f8f;
+  color: #3c9f8f;
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+}
+
+.about__link img {
+  margin-left: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: -6px;
+}
+
+.about__testimonial {
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  /* Firefox 3.5 - 3.6 */
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 /*# sourceMappingURL=style.css.map */
